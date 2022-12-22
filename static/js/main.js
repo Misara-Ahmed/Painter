@@ -4,7 +4,10 @@ let line_flag=0;
 let triangle_flag=0;
 let isNowDrawing = false;
 let btnId;
-
+let lineArray=[];
+let cirArray=[];
+let rectArray=[];
+let triangleArray=[];
 let stage = new Konva.Stage({
   container: 'content',
   width: 1100,
@@ -16,7 +19,7 @@ function circleDown(){
     cir = new Konva.Circle({
       x: stage.getPointerPosition().x,
       y: stage.getPointerPosition().y,
-      radius: 10,
+      radius: 0,
       fill: 'red',
       stroke: 'black',
       strokeWidth: 4,
@@ -36,8 +39,8 @@ function rectdown(){
     rect = new Konva.Rect({
       x: stage.getPointerPosition().x,
       y: stage.getPointerPosition().y,
-      width:10,
-      height:10,
+      width:0,
+      height:0,
       fill: "red",
       stroke: "black",
       strokeWidth: 4 ,
@@ -60,7 +63,7 @@ function triangleDown(){
     x: stage.getPointerPosition().x,
     y: stage.getPointerPosition().y,
     sides: 3,
-    radius: 20,
+    radius: 0,
     fill: 'red',
     stroke: 'black',
     strokeWidth: 4,
@@ -119,6 +122,7 @@ function drawTriangle(x){
   function mouseupHandler() {
     if (triangle_flag === 1) {
       isNowDrawing = false;
+      triangleArray.push(triangle);
     }
   }
   stage.add(layer);
@@ -149,6 +153,7 @@ function drawCircle(){
   function mouseupHandler(){
     if(cir_flag === 1) {
       isNowDrawing = false;
+      cirArray.push(cir);
     }
   }
   stage.add(layer);
@@ -181,6 +186,7 @@ function drawRect(){
     if(rect_flag === 1) {
       console.log("rect")
       isNowDrawing = false;
+      rectArray.push(rect);
     }
   }
   stage.add(layer);
@@ -213,9 +219,37 @@ function drawLine(){
     if(line_flag === 1) {
       console.log("line")
       isNowDrawing = false;
+      lineArray.push(line);
     }
   }
   stage.add(layer);
+}
+function transform(){
+  line_flag = 0;
+  rect_flag=0;
+  cir_flag=0;
+  triangle_flag=0;
+  let group = new Konva.Group({
+    draggable: true
+  });
+  layer.add(group);
+  for(i=0;i<cirArray.length;i++){
+    group.add(cirArray[i]);
+  }
+  for(j=0;j<rectArray.length;j++){
+    group.add(rectArray[j]);
+  }
+  for(k=0;k<lineArray.length;k++){
+    group.add(lineArray[k]);
+  }
+  for(l=0;l<triangleArray.length;l++){
+    group.add(triangleArray[l]);
+  }
+  const tr = new Konva.Transformer({
+    node: group
+  });
+  layer.add(tr);
+  layer.draw();
 }
 
 // const buttons = document.querySelectorAll('.button');
