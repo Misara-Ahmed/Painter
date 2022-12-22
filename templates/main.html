@@ -13,14 +13,24 @@
 </head>
 <body>
     <body>
-        <main class="container">
-            <div class="canvas">
-                <div class="canvas-content">
-                    <div id="content">  
-                    </div>
-                </div> 
-            </div>
-        </main>
+        <div class="container">
+            <!-- <section class="option-board"> -->
+                <div class="buttons">
+                    <button class="button" id="line">Line</button>
+                    <button class="button" id="rectangle">Rectange</button>
+                    <button class="button" id="circle">Circle</button>
+                    <button class="button" id="triangle">Triangle</button>
+                </div>
+            <!-- </section> -->
+            <section class="drawing-board">
+                <div class="canvas">
+                    <div class="canvas-content">
+                        <div id="content">  
+                        </div>
+                    </div> 
+                </div>
+            </section>
+        </div>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
