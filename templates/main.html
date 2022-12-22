@@ -13,24 +13,23 @@
 </head>
 <body>
     <body>
-        <div class="container">
-            <!-- <section class="option-board"> -->
-                <div class="buttons">
-                    <button class="button" id="line">Line</button>
-                    <button class="button" id="rectangle">Rectange</button>
-                    <button class="button" id="circle">Circle</button>
-                    <button class="button" id="triangle">Triangle</button>
-                </div>
-            <!-- </section> -->
-            <section class="drawing-board">
-                <div class="canvas">
-                    <div class="canvas-content">
-                        <div id="content">  
-                        </div>
-                    </div> 
-                </div>
-            </section>
-        </div>
+        <main class="container">
+            <div class="canvas">
+                <button onclick="drawTriangle()" class ="button">Draw Triangle</button>
+                <button onclick="drawCircle()" class ="button">Draw Circle</button>
+                <button onclick="drawRect()" class ="button">Draw Rectangle</button>
+                <button onclick="drawLine()" class="button">Draw line</button>
+{#                <button class="button" id="traingle">Button T</button>#}
+{#                <button class="button" id="circle">B>Button C</button>#}
+{#                <button class="button" id="rect">B>Button R</button>#}
+{#                <button class="button" id="line">B>Button L</button>#}
+                <div class="canvas-content">
+                    <div id="content">
+
+                    </div>
+                </div> 
+            </div>
+        </main>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
