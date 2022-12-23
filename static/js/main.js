@@ -10,7 +10,7 @@ let rectArray = [];
 let triangleArray = [];
 let stage = new Konva.Stage({
   container: "content",
-  width: 1100,
+  width: 1500,
   height: window.innerHeight,
 });
 let layer = new Konva.Layer();
