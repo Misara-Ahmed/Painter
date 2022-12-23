@@ -13,24 +13,21 @@
 </head>
 <body>
     <body>
-        <main class="container">
-            <div class="canvas">
-                <button onclick="drawTriangle()" class ="button">Draw Triangle</button>
-                <button onclick="drawCircle()" class ="button">Draw Circle</button>
-                <button onclick="drawRect()" class ="button">Draw Rectangle</button>
+        <div class="container">
+            <div class="buttons" id="wrapper">
                 <button onclick="drawLine()" class="button">Draw line</button>
-                <button onclick="transform()" class="button">trans</button>
-{#                <button class="button" id="traingle">Button T</button>#}
-{#                <button class="button" id="circle">B>Button C</button>#}
-{#                <button class="button" id="rect">B>Button R</button>#}
-{#                <button class="button" id="line">B>Button L</button>#}
+                <button onclick="drawTriangle()" class ="button">Draw Triangle</button>
+                <button onclick="transform()" class="button" id="shape-action">Shapes Action</button>
+                <button onclick="drawRect()" class ="button">Draw Rectangle</button>
+                <button onclick="drawCircle()" class ="button">Draw Circle</button>
+            </div>
+            <!-- <section class="drawing-board"> -->
                 <div class="canvas-content">
-                    <div id="content">
-
+                    <div id="content">  
                     </div>
                 </div> 
-            </div>
-        </main>
+            <!-- </section> -->
+        </div>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
