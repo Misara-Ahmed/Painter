@@ -27,7 +27,6 @@ function circleDown() {
   layer.add(cir);
   layer.draw();
 }
-
 function circleMove() {
   const rise = Math.pow(stage.getPointerPosition().y - cir.y(), 2);
   const run = Math.pow(stage.getPointerPosition().x - cir.x(), 2);
@@ -45,7 +44,6 @@ function rectdown() {
     stroke: "#14d4ed",
     strokeWidth: 4,
   });
-  // layer.add(rect).batchDraw()
   layer.add(rect);
   layer.draw();
 }
@@ -67,7 +65,8 @@ function triangleDown() {
     stroke: "#a37ee6",
     strokeWidth: 4,
   });
-  layer.add(triangle).batchDraw();
+  layer.add(triangle);
+  layer.draw();
 }
 
 function triangleMove() {
@@ -85,7 +84,8 @@ function lineDown() {
     listening: false,
     points: [stage.getPointerPosition().x, stage.getPointerPosition().y],
   });
-  layer.add(line).batchDraw();
+  layer.add(line);
+  line.draw();
 }
 
 function lineMove() {
@@ -235,15 +235,32 @@ function transform() {
   layer.add(group);
   for (i = 0; i < cirArray.length; i++) {
     group.add(cirArray[i]);
+    const tr1 = new Konva.Transformer({
+    node: cirArray[i],
+    });
+  layer.add(tr1);
+
   }
   for (j = 0; j < rectArray.length; j++) {
     group.add(rectArray[j]);
+    const tr2 = new Konva.Transformer({
+      node: rectArray[j],
+    });
+    layer.add(tr2);
   }
   for (k = 0; k < lineArray.length; k++) {
     group.add(lineArray[k]);
+    const tr3 = new Konva.Transformer({
+      node: lineArray[k],
+    });
+    layer.add(tr3);
   }
   for (l = 0; l < triangleArray.length; l++) {
     group.add(triangleArray[l]);
+    const tr4 = new Konva.Transformer({
+      node: triangleArray[l],
+    });
+    layer.add(tr4);
   }
   const tr = new Konva.Transformer({
     node: group,

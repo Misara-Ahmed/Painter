@@ -21,8 +21,8 @@ body {
 .canvas-content {
   background: #fff;
   border-radius: 7px;
-  height: 630px;
-  width: 1480px;
+  height: 760px;
+  width: 1700px;
   /* box-shadow: 0 5px rgb(6, 6, 78); */
   box-shadow: inset 0 0 15px rgba(6, 6, 78, 0.75);
 }
@@ -38,7 +38,7 @@ body {
   background-color: #fff;
   box-shadow: 0 0 5px rgba(6, 6, 78, 0.75);
   border-radius: 7px;
-  width: 1480px;
+  width: 1700px;
   /* height: 10vh; */
   /* box-shadow: inset 0 0 15px rgba(6, 6, 78, 0.75); */
 }
