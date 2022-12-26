@@ -3,7 +3,6 @@ let cir_flag = 0;
 let line_flag = 0;
 let triangle_flag = 0;
 let isNowDrawing = false;
-let btnId;
 let lineArray = [];
 let cirArray = [];
 let rectArray = [];
@@ -96,18 +95,16 @@ function lineMove() {
   line.points(points);
 }
 
-function drawTriangle(x) {
+function drawTriangle() {
   triangle_flag = 1;
   rect_flag = 0;
   cir_flag = 0;
   line_flag = 0;
-  console.log("triangle");
   stage.on("mousedown", mousedownHandler);
   stage.on("mousemove", mousemoveHandler);
   stage.on("mouseup", mouseupHandler);
   function mousedownHandler() {
     if (triangle_flag === 1) {
-      console.log("triangle");
       isNowDrawing = true;
       triangleDown();
     }
@@ -133,7 +130,6 @@ function drawCircle() {
   rect_flag = 0;
   line_flag = 0;
   triangle_flag = 0;
-  console.log("circle");
   stage.on("mousedown circle", mousedownHandler);
   stage.on("mousemove circle", mousemoveHandler);
   stage.on("mouseup circle", mouseupHandler);
@@ -160,7 +156,6 @@ function drawCircle() {
 }
 
 function drawRect() {
-  console.log("rect");
   rect_flag = 1;
   cir_flag = 0;
   line_flag = 0;
@@ -170,7 +165,6 @@ function drawRect() {
   stage.on("mouseup rect", mouseupHandler);
   function mousedownHandler() {
     if (rect_flag === 1) {
-      console.log("rect");
       isNowDrawing = true;
       rectdown();
     }
@@ -184,7 +178,6 @@ function drawRect() {
   }
   function mouseupHandler() {
     if (rect_flag === 1) {
-      console.log("rect");
       isNowDrawing = false;
       rectArray.push(rect);
     }
@@ -193,7 +186,6 @@ function drawRect() {
 }
 
 function drawLine() {
-  console.log("line");
   line_flag = 1;
   rect_flag = 0;
   cir_flag = 0;
@@ -204,7 +196,6 @@ function drawLine() {
 
   function mousedownHandler() {
     if (line_flag === 1) {
-      console.log("line");
       isNowDrawing = true;
       lineDown();
     }
@@ -217,7 +208,6 @@ function drawLine() {
   }
   function mouseupHandler() {
     if (line_flag === 1) {
-      console.log("line");
       isNowDrawing = false;
       lineArray.push(line);
     }
@@ -269,25 +259,3 @@ function transform() {
   layer.draw();
 }
 
-// const buttons = document.querySelectorAll('.button');
-//
-// buttons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     buttons.forEach(button => button.classList.remove('active'));
-//     button.classList.add('active');
-//     btnId = button.id;
-//     // console.log(btnId)
-//     if( btnId === 'rect') {
-//       drawRect();
-//     }
-//     if (btnId === 'circle'){
-//       drawCircle();
-//     }
-//     if(btnId === 'traingle'){
-//       drawTriangle(1);
-//     }
-//     if (btnId === 'line'){
-//       drawLine();
-//     }
-//     });
-// });
