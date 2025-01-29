@@ -18,8 +18,11 @@
 
 # Task Info
 > **Course**: Computer Graphics
+
 > **Year**: 3rd Year
-> **Semester: 1st Semester
+
+> **Semester**: 1st Semester
+
 > **Date**: 21/12/2022
 
 >**Team 11**:
