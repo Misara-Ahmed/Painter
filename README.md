@@ -3,7 +3,7 @@
 
 # Table of contents
 * [Features](#Features)
-* [Task Info](#Task Info)
+* [Task Info](#Task-Info)
 * [Screenshots & Demo](#Screenshots_&_Demo)
 
 
