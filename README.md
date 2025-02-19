@@ -1,5 +1,4 @@
-<center>  <h1> Painter :art: </h1 >
-</center>
+<center>  <h1> Painter :art: </h1 > </center>
 
 # Table of contents
 * [Features](#Features)
