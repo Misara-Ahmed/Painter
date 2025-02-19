@@ -1,4 +1,4 @@
-<center>  <h1> Painter </h1 >
+<center>  <h1> Painter :art: </h1 >
 </center>
 
 # Table of contents
